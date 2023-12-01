@@ -1,0 +1,297 @@
+@import url(reset.css);
+@font-face {
+    font-family: "Futura";
+    src: url('fonts/futur.ttf') format('truetype');
+  }
+:root {
+    /******************************************* COULEURS ************/
+    --blanc: hsl(212, 38%, 85%);
+    --noir: hsl(211, 88%, 13%);
+    --gradient: hsl(213, 92%, 5%);
+    --orange: hsl(31, 100%, 42%);
+
+    /******************************************* TAILLES *************/
+    --largeurMob: 100vw;
+    --hauteurMob: 100vh;
+    --largeurMax: 100%;
+    --largeurSide: 20%;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: var(--largeurMob);
+    height: var(--hauteurMob);
+    font-family: futura, Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 0;
+}
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: var(--largeurMob);
+    min-height: 50px;
+    height: calc(var(--hauteurMob) - 95vh);
+    background: var(--gradient);
+    color: var(--blanc);
+    z-index: 1;
+}
+header>nav:nth-child(1) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 20%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+header>nav:nth-child(1)>a {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+header>nav:nth-child(1)>a>img {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 90%;
+}
+header>nav:nth-child(2) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40%;
+}
+header>nav:nth-child(2)>input[type="search"] {
+    width: 80%;
+    height: 2em;
+    padding: .2em 0 0 2%; 
+    border-radius: 50px;
+    line-height: 2em;
+    background: var(--blanc);
+    transition: .1s ease-in-out;
+}
+header>nav:nth-child(2)>input[type="search"]:focus {
+    width: 100%;
+}
+header>nav:nth-child(3) {
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: row nowrap;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+}
+header>nav:nth-child(3)>a {
+    background: var(--orange);
+    border-radius: 15px;
+    padding: 8px;
+}
+header>nav>a {
+    text-decoration: none;
+    color: var(--gradient);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 2% 0 2%;
+}
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: var(--largeurMax);
+    height: calc(var(--hauteurMob) - 10vh);
+    background: var(--noir);
+    z-index: 0;
+}
+aside {
+    min-height: calc(var(--hauteurMob) - 9vh);
+    height: auto;
+    max-width: 12%;
+    min-width: 125px;
+    color: var(--blanc);
+    z-index: 2;
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: var(--gradient) hsla(0, 100%, 50%, 0.0);
+    scrollbar-width: thin;
+    scrollbar-gutter: auto;
+}
+aside>menu {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+}
+aside>menu>span {
+    display: none;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 6em;
+    max-width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: .7em;
+    border-radius: 12px;
+    padding-left: 8%;
+}
+aside>menu>h2 {
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: .8em;
+    color: var(--blanc);
+    cursor: pointer;
+}
+aside>menu>h2>i {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    font-weight: lighter;
+    font-size: 20px;
+    font-style: normal;
+    margin-right: 4%;
+    color: var(--orange);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+}
+menu>span>a {
+    text-decoration: none;
+}
+menu>span>a>h3 {
+    display: block;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 1em;
+    min-height: .5em;
+    padding: 5px;
+    color: var(--blanc);
+    background: hsla(0, 0%, 0%, .5);
+    border-radius: 20px;
+    margin: 0;
+
+}
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(var(--largeurMob) - 10vw);
+    height: calc(var(--hauteurMob) - 9vh);
+    background: var(--blanc);
+    z-index: 1;
+    overflow-y: scroll;
+    scrollbar-color: var(--gradient) var(--noir);
+    scrollbar-width: thin;
+    scrollbar-gutter: auto;
+}
+article {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: var(--largeurMax);
+    height: calc(var(--largeurMax) / 3);
+    background: var(--noir);
+    color: var(--blanc);
+    overflow: visible;
+    z-index: 0;
+}
+article>figure {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: var(--largeurMax);
+    height: var(--largeurMax);
+    margin: 0;
+    padding: 0;
+}
+figure>img {
+    max-width: var(--largeurMax);
+    min-height: var(--largeurMax);
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    z-index: 0;
+}
+.download-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 1.4em;
+    font-size: 2em;
+    font-weight: bolder;
+    color: var(--orange);
+    background: var(--noir);
+    border: transparent;
+    border-radius: 2px;
+    cursor: pointer;
+}
+figure>figcaption {
+    display: none;
+    position: absolute;
+    background: rgba(0,0,0,0.75);
+    color: white;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+}
+figure:hover>figcaption {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 96%;
+    height: auto;
+    padding: 2%;
+    background: hsla(0, 0%, 0%, 0.7);
+    z-index: 1;
+}
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+    height: 15vh;
+    background: var(--noir);
+    z-index: 1;
+}
+footer>a {
+    text-decoration: none;
+    font-size: .8em;
+    color: var(--blanc);
+}
+footer>p {
+    margin: 0;
+    color: var(--blanc);
+}
+footer>a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
